@@ -1,0 +1,43 @@
+#include <armadillo>
+#include <iostream>
+
+
+int main(){
+ 
+    int N = 6;
+    int n = N;
+    int m = N;
+    int num_steps = N+1;
+    double h = 1/num_steps;   //Our step_size
+    double a = -1/h**2;
+    double d = 2/h**2;
+
+
+    arma::mat A = arma::mat(n,m).fill(0);
+    b = A(0,0);
+    a = A(0,1);
+    b = A(N, N);
+    a=A(N, N-1);
+    for(i=1, i < N-1, i++){
+        for(j=1,i<N-1, i++){
+
+            if(i==j){
+                b=A(i,j);
+                a=A(i-1,j);
+                a=A(i+1,j);
+            }
+
+        }
+
+    }
+
+arma::vec eigenval;
+arma::mat eigenvec;
+
+aram::eigen_sym(eigenval, eigenvec, A);
+std::cout << eigenvec;
+std::cout << eigenval;
+return 0;
+     
+
+}
