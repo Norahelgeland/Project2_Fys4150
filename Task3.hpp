@@ -7,7 +7,6 @@ double max_offdiag_symmetric(const arma::mat& A, int& k, int& l);
 
 double max_offdiag_symmetric(const arma::mat& A, int& k, int& l){
 
-    
     double max_value = 0;
 
     for(int i=0; i < A.n_rows-1; i++){
