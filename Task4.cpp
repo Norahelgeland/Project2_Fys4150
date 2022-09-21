@@ -9,34 +9,23 @@
 
 int main(){
 
-    arma::mat A = tri_matrix(6, false);
+    // Define variables that wil be used in the jacobian eigenevalue solver
     arma::vec eigenvalues;
     arma::mat eigenvectors;
     int iterations;
-    int maxiter;
+    int maxiter = 10000;
     bool converged;
 
     int k;
     int l;
+    double N = 6; // Matrix size
 
+    arma::mat A = tri_matrix(N, false); // Define a matrix
+    // Run the Jacobian eigenvalue solver
     jacobi_eigensolver(A, pow(10,-20), eigenvalues, eigenvectors, maxiter, iterations, converged);
 
-        //std::cout<< iterations; 
-    std::cout<< D;
-    // //std::cout<< A;
-    std::cout<< "#################################################################################################################################################";
-    std::cout<< R;
-
-    std::cout<< "#################################################################################################################################################";
-
-    arma::vec eigenvaltrue;
-    arma::mat eigenvectrue;
-    arma::eig_sym(eigenvaltrue, eigenvectrue, A);
-    std::cout << eigenvectrue;
-    std::cout << eigenvaltrue;
-
-    std::cout<< "#################################################################################";
-    std::cout<< A;
+    std::cout << eigenvalues; // prints eigenevalues
+    std::cout << eigenvectors; // prints eigenvectors
 
     return 0;
 }

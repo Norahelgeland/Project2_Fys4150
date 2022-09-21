@@ -22,9 +22,4 @@ int main(){
 
     T.save("file4");
 
-    //int k;
-    //int l;
-
-    //double max_value = max_offdiag_symmetric(T, k, l);
-
 }

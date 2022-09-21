@@ -4,14 +4,14 @@
 #include <math.h>
 
 
-
+// This function makes a tridiagonal matrix that solves the buckling beam problem
 arma::mat tri_matrix(double N, bool dense);
 
 
 arma::mat tri_matrix(double N, bool dense){
 
     arma::mat A = arma::mat(N,N).fill(0.);
-
+    // If dense is sat to false is makes a not dense matrix and visa versa.
     if(!dense){
 
         //Create tridiagonal matrix
@@ -38,8 +38,7 @@ arma::mat tri_matrix(double N, bool dense){
     }
 
     else{
-        // Generate random N*N matrix
-        //arma::mat 
+        // Generate random N*N matrix 
         A = arma::mat(N, N).randn();  
 
         // Symmetrize the matrix by reflecting the upper triangle to lower triangle
